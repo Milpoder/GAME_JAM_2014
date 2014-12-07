@@ -13,6 +13,7 @@ public class PlayerController_02 : MonoBehaviour {
 
 	[Header("Fire parameters: ")]
 	public GameObject BulletPrefab;
+	public GUIText GUIBullets;
 	public float FireCooldown = 0f;
 	public int NumBullets = 5;
 	public Transform RelativePositionFire;
@@ -58,6 +59,8 @@ public class PlayerController_02 : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+
+		GUIBullets.text = "Municion: " + NumBullets.ToString();
 
 		if(!Pause && !block_axis)
 		{
@@ -119,9 +122,8 @@ public class PlayerController_02 : MonoBehaviour {
 		if(other.tag == "Range" ){
 			currentGravity += incrementGravity;
 		}
-		Debug.Log ("soy una puta" + other.tag);
+
 		if(other.tag == "Goal"){
-			Debug.Log("Soy una puta barata!!!!");
 			other.GetComponentInParent<Goal>().playerArrive_02();
 		}
 		
@@ -142,6 +144,7 @@ public class PlayerController_02 : MonoBehaviour {
 		NewBulletPrefab = Instantiate(BulletPrefab) as GameObject;
 		NewBulletPrefab.transform.parent = transform;
 		NewBulletPrefab.transform.position = RelativePositionFire.position;
+		NewBulletPrefab.GetComponent<BulletScript>().Speed += moveSpeed;
 		NewBulletPrefab.transform.rotation = Parent.rotation;
 		NewBulletPrefab.transform.parent = null;
 		

@@ -15,6 +15,8 @@ public class Goal : MonoBehaviour {
 	public float maxTimer = 0f;
 	public GUIText globalTimer1, globalTimer2;
 	public bool pause = true;
+	private float TimerPlayer01;
+	private float TimerPlayer02;
 
 	
 	// Use this for initialization
@@ -26,19 +28,21 @@ public class Goal : MonoBehaviour {
 
 	public void playerArrive_01(){
 		player1_Arrived = true;
+		TimerPlayer01 = player1_timer.timer;
 		if(player2_Arrived)
 			CheckWinner();
 	}
 
 	public void playerArrive_02(){
 		player2_Arrived = true;
+		TimerPlayer02 = player2_timer.timer;
 		if(player1_Arrived)
 			CheckWinner();
 	}
 
 	void CheckWinner(){
 		if(player1_Arrived  && player2_Arrived){
-			if(player1_timer.timer < player2_timer.timer){
+			if(TimerPlayer01 < TimerPlayer02){
 				texturePlayer1.texture = textures[0];
 				texturePlayer2.texture = textures[1];
 				StartCoroutine(endLevel(timeEnd));

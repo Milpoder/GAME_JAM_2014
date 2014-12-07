@@ -13,6 +13,7 @@ public class PlayerController_01 : MonoBehaviour {
 
 	[Header("Fire parameters: ")]
 	public GameObject BulletPrefab;
+	public GUIText GUIBullets;
 	public float FireCooldown = 0f;
 	public int NumBullets = 5;
 	public Transform RelativePositionFire;
@@ -53,6 +54,8 @@ public class PlayerController_01 : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+
+		GUIBullets.text = "Municion: " + NumBullets.ToString();
 
 			if (!Pause && !block_axis) {
 				if (Input.GetKey (KeyCode.A)) {
@@ -131,6 +134,7 @@ public class PlayerController_01 : MonoBehaviour {
 		NewBulletPrefab = Instantiate(BulletPrefab) as GameObject;
 		NewBulletPrefab.transform.parent = transform;
 		NewBulletPrefab.transform.position = RelativePositionFire.position;
+		NewBulletPrefab.GetComponent<BulletScript>().Speed += moveSpeed;
 		NewBulletPrefab.transform.rotation = Parent.rotation;
 		NewBulletPrefab.transform.parent = null;
 

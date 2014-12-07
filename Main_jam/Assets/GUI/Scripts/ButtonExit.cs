@@ -35,7 +35,6 @@ public class ButtonExit : MonoBehaviour {
 	
 	IEnumerator DelayAndActivate(float DelayTime)
 	{
-		Debug.Log("Quit!!!");
 		yield return new WaitForSeconds(DelayTime);
 		Application.Quit();
 	}
