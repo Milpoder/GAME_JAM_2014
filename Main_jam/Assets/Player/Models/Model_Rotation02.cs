@@ -7,6 +7,7 @@ public class Model_Rotation02 : MonoBehaviour {
 	public float MinRotation = 0f;
 	public float RotationSpeed = 0f;
 	public float RelativeRotation = 0f;
+	public PlayerController_02 Controller;
 	
 	// Use this for initialization
 	void Start () {
@@ -15,33 +16,37 @@ public class Model_Rotation02 : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		if (Input.GetAxis("Horizontal2")>0)
+
+		if (!Controller.Pause)
 		{
-			if(RelativeRotation < MaxRotation)
+			if (Input.GetAxis("Horizontal2")>0)
 			{
-				transform.Rotate(-RotationSpeed*Time.deltaTime,0,0);
-				RelativeRotation = RelativeRotation + RotationSpeed*Time.deltaTime;
+				if(RelativeRotation < MaxRotation)
+				{
+					transform.Rotate(-RotationSpeed*Time.deltaTime,0,0);
+					RelativeRotation = RelativeRotation + RotationSpeed*Time.deltaTime;
+				}
 			}
-		}
-		else if (Input.GetAxis("Horizontal2")<0)
-		{
-			if(RelativeRotation > MinRotation)
+			else if (Input.GetAxis("Horizontal2")<0)
 			{
-				transform.Rotate(RotationSpeed*Time.deltaTime,0,0);
-				RelativeRotation = RelativeRotation - RotationSpeed*Time.deltaTime;
+				if(RelativeRotation > MinRotation)
+				{
+					transform.Rotate(RotationSpeed*Time.deltaTime,0,0);
+					RelativeRotation = RelativeRotation - RotationSpeed*Time.deltaTime;
+				}
 			}
-		}
-		else
-		{
-			if (RelativeRotation>0)
+			else
 			{
-				transform.Rotate(RotationSpeed*Time.deltaTime,0,0);
-				RelativeRotation = RelativeRotation - RotationSpeed*Time.deltaTime;
-			}
-			if (RelativeRotation<0)
-			{
-				transform.Rotate(-RotationSpeed*Time.deltaTime,0,0);
-				RelativeRotation = RelativeRotation + RotationSpeed*Time.deltaTime;
+				if (RelativeRotation>0)
+				{
+					transform.Rotate(RotationSpeed*Time.deltaTime,0,0);
+					RelativeRotation = RelativeRotation - RotationSpeed*Time.deltaTime;
+				}
+				if (RelativeRotation<0)
+				{
+					transform.Rotate(-RotationSpeed*Time.deltaTime,0,0);
+					RelativeRotation = RelativeRotation + RotationSpeed*Time.deltaTime;
+				}
 			}
 		}
 	}

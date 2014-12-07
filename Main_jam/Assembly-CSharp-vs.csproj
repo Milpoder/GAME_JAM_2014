@@ -47,10 +47,13 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Enviroment\Acelerator\Scripts\Acelerator.cs" />
+     <Compile Include="Assets\Enviroment\ConstantMovement.cs" />
+     <Compile Include="Assets\Enviroment\MunitionBox\Scripts\munitions.cs" />
      <Compile Include="Assets\GUI\Scripts\ButtonController.cs" />
      <Compile Include="Assets\GUI\Scripts\ButtonExit.cs" />
      <Compile Include="Assets\GUI\Scripts\MenuControl.cs" />
      <Compile Include="Assets\GUI\Scripts\ScaleGUI.cs" />
+     <Compile Include="Assets\Level Controller\Scripts\StartCount.cs" />
      <Compile Include="Assets\Player\Bullets\BulletScript.cs" />
      <Compile Include="Assets\Player\Models\Model_Rotation01.cs" />
      <Compile Include="Assets\Player\Models\Model_Rotation02.cs" />
@@ -60,7 +63,7 @@
      <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
      <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
  <Reference Include="Assembly-UnityScript-firstpass">
- <HintPath>C:/Users/pedro/Desktop/Main_jam/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+ <HintPath>C:/Users/pedro/Documents/GitHub/GAME_JAM_2014/Main_jam/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>

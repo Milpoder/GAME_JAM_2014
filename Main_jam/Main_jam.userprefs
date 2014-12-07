@@ -1,16 +1,17 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Player\Models\Model_Rotation01.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\GUI\Scripts\MenuControl.cs">
     <Files>
-      <File FileName="Assets\Player\Scripts\PlayerController_02.cs" Line="51" Column="53" />
-      <File FileName="Assets\Player\Scripts\PlayerController_01.cs" Line="1" Column="1" />
+      <File FileName="Assets\Player\Scripts\PlayerController_01.cs" Line="25" Column="2" />
+      <File FileName="Assets\Player\Scripts\PlayerController_02.cs" Line="1" Column="1" />
       <File FileName="Assets\Enviroment\Acelerator\Scripts\Acelerator.cs" Line="1" Column="1" />
-      <File FileName="Assets\Visual Effects\Autodestruction.cs" Line="1" Column="1" />
+      <File FileName="Assets\GUI\Scripts\MenuControl.cs" Line="85" Column="35" />
+      <File FileName="Assets\Player\Models\Model_Rotation01.cs" Line="1" Column="1" />
+      <File FileName="Assets\Player\Models\Model_Rotation02.cs" Line="1" Column="1" />
+      <File FileName="Assets\Level Controller\Scripts\StartCount.cs" Line="1" Column="1" />
+      <File FileName="Assets\GUI\Scripts\ScaleGUI.cs" Line="1" Column="1" />
+      <File FileName="Assets\Enviroment\MunitionBox\Scripts\munitions.cs" Line="1" Column="1" />
       <File FileName="Assets\GUI\Scripts\ButtonController.cs" Line="1" Column="1" />
-      <File FileName="Assets\GUI\Scripts\MenuControl.cs" Line="1" Column="1" />
-      <File FileName="Assets\GUI\Scripts\ButtonExit.cs" Line="1" Column="1" />
-      <File FileName="Assets\Player\Models\Model_Rotation01.cs" Line="21" Column="5" />
-      <File FileName="Assets\Player\Models\Model_Rotation02.cs" Line="26" Column="38" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

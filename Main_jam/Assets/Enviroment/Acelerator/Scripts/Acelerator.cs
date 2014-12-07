@@ -10,7 +10,7 @@ public class Acelerator : MonoBehaviour {
 	public GameObject VisualEffectExplosion;
 	GameObject NewVisualEffectExplosion;
 
-	bool IsActive = true;
+	public bool IsActive = true;
 
 	// Use this for initialization
 	void Start () {
@@ -20,9 +20,10 @@ public class Acelerator : MonoBehaviour {
 
 	}
 
-	void OnCollisionEnter(Collision CurrentCollision)
+	void OnTriggerEnter(Collider other)
 	{
-		if (CurrentCollision.collider.tag == "Player")
+
+		if (other.tag == "Player")
 		{
 			if (IsActive) ExplosionEffect();
 		}
