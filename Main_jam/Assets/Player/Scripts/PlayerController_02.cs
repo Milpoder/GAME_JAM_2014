@@ -3,11 +3,13 @@ using System.Collections;
 
 public class PlayerController_02 : MonoBehaviour {
 
+	private int playerId=2;
+
 	[Header("Movement parameters: ")]
 	public float moveSpeed = 0f;
 	public float rotationSpeed = 0f;
 	public bool Pause = true;
-	private float currentGravity = 0f;
+
 
 	[Header("Fire parameters: ")]
 	public GameObject BulletPrefab;
@@ -24,6 +26,8 @@ public class PlayerController_02 : MonoBehaviour {
 	public GameObject stunPrefab;
 	GameObject NewStunPrefab;
 	public Transform PositionStun;
+	private float currentGravity = 0f;
+	public float incrementGravity = 0f;
 
 
 	GameObject NewBulletPrefab;
@@ -95,20 +99,39 @@ public class PlayerController_02 : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other)
 	{
+		
 		if (other.tag == "Acelerator")
 		{
 			if (other.GetComponentInParent<Acelerator>().IsActive) moveSpeed += AceleratorVelIncrement;
 		}
+		
 		if (other.tag == "Descelerator")
 		{
 			if (other.GetComponentInParent<Acelerator>().IsActive) moveSpeed -= DesceleratorVelDecrement;
 			if (moveSpeed < 5) moveSpeed = 5f;
 		}
+		
 		if (other.tag == "Box")
 		{
 			CollisionWithBox();
 		}
+		
+		if(other.tag == "Range" ){
+			currentGravity += incrementGravity;
+		}
+		Debug.Log ("soy una puta" + other.tag);
+		if(other.tag == "Goal"){
+			Debug.Log("Soy una puta barata!!!!");
+			other.GetComponentInParent<Goal>().playerArrive_02();
+		}
+		
 	}
+	
+	void OnTriggerExit(Collider other){
+		if(other.tag == "Range")
+			currentGravity -= incrementGravity;
+	}
+
 
 	void Fire ()
 	{
@@ -147,5 +170,9 @@ public class PlayerController_02 : MonoBehaviour {
 	
 	public float getGravity(){
 		return currentGravity;
+	}
+
+	public int getId(){
+		return playerId;
 	}
 }

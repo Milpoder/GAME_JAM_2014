@@ -1,20 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Player\Scripts\PlayerController_01.cs">
     <Files>
-      <File FileName="Assets\Player\Bullets\BulletScript.cs" Line="18" Column="47" />
-      <File FileName="Assets\GUI\Counter\Scripts\Timer_01.cs" Line="18" Column="47" />
-      <File FileName="Assets\Player\Scripts\PlayerController_01.cs" Line="95" Column="38" />
-      <File FileName="Assets\Player\Scripts\PlayerController_02.cs" Line="105" Column="38" />
-      <File FileName="Assets\Enviroment\Acelerator\Scripts\Acelerator.cs" Line="1" Column="1" />
-      <File FileName="Assets\GUI\Scripts\MenuControl.cs" Line="1" Column="1" />
-      <File FileName="Assets\Player\Models\Model_Rotation01.cs" Line="1" Column="1" />
-      <File FileName="Assets\Player\Models\Model_Rotation02.cs" Line="1" Column="1" />
-      <File FileName="Assets\Level Controller\Scripts\StartCount.cs" Line="1" Column="1" />
-      <File FileName="Assets\GUI\Scripts\ScaleGUI.cs" Line="1" Column="1" />
-      <File FileName="Assets\Enviroment\MunitionBox\Scripts\munitions.cs" Line="1" Column="1" />
-      <File FileName="Assets\GUI\Scripts\ButtonController.cs" Line="1" Column="1" />
-      <File FileName="Assets\GUI\Counter\Scripts\Timer_02.cs" Line="18" Column="47" />
+      <File FileName="Assets\Enviroment\Goal\Scripts\Goal.cs" Line="88" Column="19" />
+      <File FileName="Assets\Player\Scripts\PlayerController_02.cs" Line="125" Column="57" />
+      <File FileName="Assets\Player\Scripts\PlayerController_01.cs" Line="114" Column="54" />
+      <File FileName="Assets\Level Controller\Scripts\StartCount.cs" Line="82" Column="14" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

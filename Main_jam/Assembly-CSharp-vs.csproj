@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\Enviroment\Acelerator\Scripts\Acelerator.cs" />
      <Compile Include="Assets\Enviroment\ConstantMovement.cs" />
+     <Compile Include="Assets\Enviroment\Goal\Scripts\Goal.cs" />
      <Compile Include="Assets\Enviroment\MunitionBox\Scripts\munitions.cs" />
      <Compile Include="Assets\GUI\Counter\Scripts\Timer_01.cs" />
      <Compile Include="Assets\GUI\Counter\Scripts\Timer_02.cs" />

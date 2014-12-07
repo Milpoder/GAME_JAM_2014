@@ -19,7 +19,7 @@ public class Timer_01 : MonoBehaviour {
 	}
 
 	float incrementDeltaTime(float v, float g, float delta){
-		return v * (g+1) * delta;
+		return v * (g+1)  * delta;
 	}
 
 }

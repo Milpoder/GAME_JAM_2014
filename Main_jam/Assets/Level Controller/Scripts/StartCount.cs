@@ -6,6 +6,7 @@ public class StartCount : MonoBehaviour {
 	[Header("Player Parameters: ")]
 	public PlayerController_01 Player1;
 	public PlayerController_02 Player2;
+	public  Goal globalTimer;
 
 	[Header("Count Parameters: ")]
 	public GameObject Start_Object_1;
@@ -33,6 +34,7 @@ public class StartCount : MonoBehaviour {
 
 		Player1.Pause = true;
 		Player2.Pause = true;
+		globalTimer.pause = true;
 
 		StartCoroutine(Count());
 	}
@@ -77,6 +79,7 @@ public class StartCount : MonoBehaviour {
 		guiTexture.texture = null;
 		Player1.Pause = false;
 		Player2.Pause = false;
+		globalTimer.pause = false;
 
 		Start_Object_1.animation.clip = Start_Clips[2];
 		Start_Object_1.animation.Play();
