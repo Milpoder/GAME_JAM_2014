@@ -7,6 +7,7 @@ public class PlayerController_02 : MonoBehaviour {
 	public float moveSpeed = 0f;
 	public float rotationSpeed = 0f;
 	public bool Pause = true;
+	private float currentGravity = 0f;
 
 	[Header("Fire parameters: ")]
 	public GameObject BulletPrefab;
@@ -17,6 +18,7 @@ public class PlayerController_02 : MonoBehaviour {
 
 	[Header("Collision parameters: ")]
 	public float AceleratorVelIncrement=5f;
+	public float DesceleratorVelDecrement = 5f;
 	private bool block_axis = false; 
 	public float time_block = 0f;
 	public GameObject stunPrefab;
@@ -97,6 +99,11 @@ public class PlayerController_02 : MonoBehaviour {
 		{
 			if (other.GetComponentInParent<Acelerator>().IsActive) moveSpeed += AceleratorVelIncrement;
 		}
+		if (other.tag == "Descelerator")
+		{
+			if (other.GetComponentInParent<Acelerator>().IsActive) moveSpeed -= DesceleratorVelDecrement;
+			if (moveSpeed < 5) moveSpeed = 5f;
+		}
 		if (other.tag == "Box")
 		{
 			CollisionWithBox();
@@ -132,5 +139,13 @@ public class PlayerController_02 : MonoBehaviour {
 	{
 		yield return new WaitForSeconds(CooldownTime);
 		FireKey = true;
+	}
+
+	public void setGravity(float g){
+		currentGravity = g;
+	}
+	
+	public float getGravity(){
+		return currentGravity;
 	}
 }
