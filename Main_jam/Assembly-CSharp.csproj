@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\DeleteMouse.cs" />
      <Compile Include="Assets\Enviroment\Acelerator\Scripts\Acelerator.cs" />
      <Compile Include="Assets\Enviroment\Asteroid\Scripts\Asteroid.cs" />
      <Compile Include="Assets\Enviroment\ConstantMovement.cs" />
