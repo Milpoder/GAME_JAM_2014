@@ -55,6 +55,8 @@
      <Compile Include="Assets\Enviroment\WormHole\Scripts\Worm.cs" />
      <Compile Include="Assets\GUI\Counter\Scripts\Timer_01.cs" />
      <Compile Include="Assets\GUI\Counter\Scripts\Timer_02.cs" />
+     <Compile Include="Assets\GUI\Menu_instrucciones\Menu_instrucciones.cs" />
+     <Compile Include="Assets\GUI\Menu_multiplayer\MenuMultiplayuer.cs" />
      <Compile Include="Assets\GUI\Scripts\ButtonController.cs" />
      <Compile Include="Assets\GUI\Scripts\ButtonExit.cs" />
      <Compile Include="Assets\GUI\Scripts\MenuControl.cs" />

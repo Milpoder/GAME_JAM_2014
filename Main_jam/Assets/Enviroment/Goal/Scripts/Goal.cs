@@ -5,6 +5,7 @@ public class Goal : MonoBehaviour {
 
 	bool player1_Arrived = false;
 	bool player2_Arrived = false;
+	bool EndLevel = false;
 	float timer = 0f;
 	public Timer_01 player1_timer;
 	public Timer_02 player2_timer;
@@ -33,20 +34,20 @@ public class Goal : MonoBehaviour {
 	public void playerArrive_01(){
 		player1_Arrived = true;
 		TimerPlayer01 = player1_timer.timer;
-		if(player2_Arrived)
+		if(player2_Arrived && EndLevel == false)
 			CheckWinner();
 	}
 
 	public void playerArrive_02(){
 		player2_Arrived = true;
 		TimerPlayer02 = player2_timer.timer;
-		if(player1_Arrived)
+		if(player1_Arrived && EndLevel == false)
 			CheckWinner();
 	}
 
 	void CheckWinner(){
 
-
+		EndLevel = true;
 		audio.PlayOneShot(EndSound);
 		if(player1_Arrived  && player2_Arrived){
 			if(TimerPlayer01 < TimerPlayer02){
@@ -95,7 +96,7 @@ public class Goal : MonoBehaviour {
 				timer =0 ;
 			globalTimer1.text = timer.ToString();
 			globalTimer2.text = timer.ToString();
-			if(timer <= 0)
+			if(timer <= 0 && EndLevel == false)
 				CheckWinner();
 		}
 

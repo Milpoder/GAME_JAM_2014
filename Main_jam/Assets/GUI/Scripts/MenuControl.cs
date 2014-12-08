@@ -13,7 +13,6 @@ public class MenuControl : MonoBehaviour {
 	void Start () {
 		buttonControllers[0].Normal();
 		buttonControllers[1].Normal();
-		buttonControllers[2].Normal();
 		ButtonToExit.Normal();
 		buttonControllers[selected].Selection();
 	}
@@ -28,7 +27,7 @@ public class MenuControl : MonoBehaviour {
 		if ((Input.GetKey(KeyCode.UpArrow)||Input.GetAxis("Vertical1")>0||Input.GetAxis("Vertical2")>0) && key==true)
 		{
 			key = false;
-			if (selected == 3)
+			if (selected == 2)
 			{
 				ButtonToExit.Normal();
 			}
@@ -38,8 +37,8 @@ public class MenuControl : MonoBehaviour {
 			}
 
 			selected --;
-			if (selected<0) selected = 3;
-			if (selected == 3)
+			if (selected<0) selected = 2;
+			if (selected == 2)
 			{
 				ButtonToExit.Selection();
 				StartCoroutine(Resetkey(Cooldown));
@@ -54,7 +53,7 @@ public class MenuControl : MonoBehaviour {
 		if ((Input.GetKey(KeyCode.DownArrow)||Input.GetAxis("Vertical1")<0||Input.GetAxis("Vertical2")<0) && key==true)
 		{
 			key = false;
-			if (selected == 3)
+			if (selected == 2)
 			{
 				ButtonToExit.Normal();
 			}
@@ -64,8 +63,8 @@ public class MenuControl : MonoBehaviour {
 			}
 			
 			selected ++;
-			if (selected>3) selected = 0;
-			if (selected == 3)
+			if (selected>2) selected = 0;
+			if (selected == 2)
 			{
 				ButtonToExit.Selection();
 				StartCoroutine(Resetkey(Cooldown));
@@ -79,7 +78,7 @@ public class MenuControl : MonoBehaviour {
 
 		if (Input.GetKeyDown(KeyCode.KeypadEnter)||Input.GetKeyDown(KeyCode.Joystick1Button0)||Input.GetKeyDown(KeyCode.Joystick2Button0))
 		{
-			if (selected == 3)
+			if (selected == 2)
 			{
 				ButtonToExit.Push();
 				ButtonToExit.ActivateButton();

@@ -32,7 +32,7 @@ public class VelocityGUI : MonoBehaviour {
 
 		AuxIndex = (int)((Player2.moveSpeed - PerfectSpeed2)/5 - (Player2.moveSpeed - PerfectSpeed2)%5) + 6;
 		if (AuxIndex<0) AuxIndex = 0;
-		if (AuxIndex>13) AuxIndex = 13;
+		if (AuxIndex>12) AuxIndex = 12;
 		TexturePlayer2.texture = GUIVelocityTextures[AuxIndex];
 
 	}
