@@ -89,7 +89,7 @@ public class PlayerController_02 : MonoBehaviour {
 
 	void OnCollisionEnter(Collision currentCollision){
 		
-		if(currentCollision.collider.tag == "Bullet"){
+		if(currentCollision.collider.tag == "Bullet" || currentCollision.collider.tag == "Asteroid"){
 			block_axis=true;
 
 			NewStunPrefab = Instantiate(stunPrefab) as GameObject; 

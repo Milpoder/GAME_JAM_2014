@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Enviroment\Acelerator\Scripts\Acelerator.cs" />
+     <Compile Include="Assets\Enviroment\Asteroid\Scripts\Asteroid.cs" />
      <Compile Include="Assets\Enviroment\ConstantMovement.cs" />
      <Compile Include="Assets\Enviroment\Goal\Scripts\Goal.cs" />
      <Compile Include="Assets\Enviroment\MunitionBox\Scripts\munitions.cs" />
@@ -56,6 +57,7 @@
      <Compile Include="Assets\GUI\Scripts\ButtonExit.cs" />
      <Compile Include="Assets\GUI\Scripts\MenuControl.cs" />
      <Compile Include="Assets\GUI\Scripts\ScaleGUI.cs" />
+     <Compile Include="Assets\GUI\VelocityGUI\Scripts\VelocityGUI.cs" />
      <Compile Include="Assets\Level Controller\Scripts\StartCount.cs" />
      <Compile Include="Assets\Player\Bullets\BulletScript.cs" />
      <Compile Include="Assets\Player\Models\Model_Rotation01.cs" />

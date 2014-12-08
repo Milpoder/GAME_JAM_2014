@@ -5,10 +5,11 @@ public class Timer_01 : MonoBehaviour {
 
 	public PlayerController_01 Player01;
 	public float timer = 0f;
+	public float A = 1f, B=1f;
 
 	// Use this for initialization
 	void Start () {
-	
+		timer = 0f;
 	}
 	
 	// Update is called once per frame
@@ -19,7 +20,8 @@ public class Timer_01 : MonoBehaviour {
 	}
 
 	float incrementDeltaTime(float v, float g, float delta){
-		return v * (g+1)  * delta;
+
+		return ((v*v*A) + (g+1)*B)  * delta;
 	}
 
 }

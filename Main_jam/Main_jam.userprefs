@@ -1,12 +1,15 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\GUI\Scripts\ButtonExit.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Player\Scripts\PlayerController_01.cs">
     <Files>
-      <File FileName="Assets\Player\Scripts\PlayerController_02.cs" Line="147" Column="67" />
-      <File FileName="Assets\Enviroment\Goal\Scripts\Goal.cs" Line="45" Column="36" />
-      <File FileName="Assets\Player\Scripts\PlayerController_01.cs" Line="137" Column="67" />
+      <File FileName="Assets\GUI\VelocityGUI\Scripts\VelocityGUI.cs" Line="29" Column="100" />
+      <File FileName="Assets\GUI\Counter\Scripts\Timer_01.cs" Line="1" Column="1" />
+      <File FileName="Assets\Enviroment\Goal\Scripts\Goal.cs" Line="1" Column="1" />
+      <File FileName="Assets\Player\Scripts\PlayerController_02.cs" Line="1" Column="1" />
+      <File FileName="Assets\Player\Scripts\PlayerController_01.cs" Line="83" Column="96" />
       <File FileName="Assets\Level Controller\Scripts\StartCount.cs" Line="1" Column="1" />
-      <File FileName="Assets\GUI\Scripts\ButtonExit.cs" Line="37" Column="3" />
+      <File FileName="Assets\GUI\Scripts\ButtonExit.cs" Line="1" Column="1" />
+      <File FileName="Assets\GUI\Counter\Scripts\Timer_02.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
