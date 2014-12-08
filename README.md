@@ -9,7 +9,7 @@ https://www.jamendo.com/es/list/a83228/spacechem
 
 
 
-#########################################INSTALACIÓN###########################################
+                    INSTALACIÓN
 
 El juego no necesita instalación, si deseas utilizarlo, simplemente descarga la carpeta build y ejecuta el exe, se puede utilizar con los mandos de xbox, controlando con el joystick izquierdo y disparando en la tecla A, para los jugadores en teclado se utilizan las siguientes teclas:
 
