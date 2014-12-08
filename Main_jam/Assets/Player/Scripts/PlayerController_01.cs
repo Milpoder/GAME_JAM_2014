@@ -4,6 +4,9 @@ using System.Collections;
 public class PlayerController_01 : MonoBehaviour {
 
 	private int playerId=1;
+	private bool pauseg = false;
+	public GUITexture texturePlayer1, texturePlayer2 ;
+	public Texture t;
 
 	[Header("Movement parameters: ")]
 	public float moveSpeed = 0f;
@@ -33,12 +36,12 @@ public class PlayerController_01 : MonoBehaviour {
 	GameObject NewBulletPrefab;
 	bool FireKey = true;
 	Vector3 AuxVector3;
-	
 
-	// Use this for initialization
-	void Start () {
-		
-	}
+	[Header("Teleport: ")]
+	public GameObject PlayerModel;
+	public float PlayerTimeIn, PlayerTimeExit;
+	private bool teleported = false;
+	
 
 	void Update()
 	{
@@ -69,6 +72,9 @@ public class PlayerController_01 : MonoBehaviour {
 				transform.Rotate (0, rotationSpeed * Input.GetAxis ("Horizontal1") * Time.deltaTime, 0);
 			}
 			else if(block_axis) transform.Translate (0, 0, moveSpeed * Time.deltaTime);
+
+		/*if(Input.GetKeyDown(KeyCode.Joystick1Button7))
+				pausegame();*/
 	}
 
 	IEnumerator resetBlock(float time_actu){
@@ -117,11 +123,38 @@ public class PlayerController_01 : MonoBehaviour {
 			other.GetComponentInParent<Goal>().playerArrive_01();
 		}
 
+		if(other.tag == "Worm" && !teleported){
+
+			StartCoroutine(WormIn(PlayerTimeIn,other));
+		}
+		if(other.tag == "Worm" && teleported){
+
+			StartCoroutine(WormOut(PlayerTimeExit));
+
+		}
+
+
+	}
+
+
+
+	IEnumerator WormIn (float TimeIn, Collider CurrentOther)
+	{
+
+		teleported = true;
+		yield return new WaitForSeconds(TimeIn);
+		this.transform.position = CurrentOther.GetComponentInParent<Worm>().teletransport(0);
+	}
+	IEnumerator WormOut (float TimeExit)
+	{
+		yield return new WaitForSeconds(TimeExit);
+		teleported = false;
 	}
 
 	void OnTriggerExit(Collider other){
 		if(other.tag == "Range")
 			currentGravity -= incrementGravity;
+
 	}
 
 
@@ -167,5 +200,20 @@ public class PlayerController_01 : MonoBehaviour {
 
 	public int getId(){
 		return playerId;
+	}
+
+	public void pausegame(){
+		if(!pauseg){
+			Time.timeScale = 0;
+			Time.fixedDeltaTime = (float)0.02 * Time.timeScale;
+			texturePlayer1.texture = t;
+			texturePlayer2.texture = t;
+			pauseg = true;
+		}
+		else{
+			pauseg=false;
+			texturePlayer1.texture = null;
+			texturePlayer2.texture = null;
+		}
 	}
 }

@@ -4,6 +4,9 @@ using System.Collections;
 public class PlayerController_02 : MonoBehaviour {
 
 	private int playerId=2;
+	private bool pauseg = false;
+	public GUITexture texturePlayer1, texturePlayer2;
+	public Texture t;
 
 	[Header("Movement parameters: ")]
 	public float moveSpeed = 0f;
@@ -37,7 +40,12 @@ public class PlayerController_02 : MonoBehaviour {
 	Vector2 DirectionToGo;
 	Vector2 CurrentDirection;
 
-	
+	[Header("Teleport: ")]
+	public GameObject PlayerModel;
+	public float PlayerTimeIn, PlayerTimeExit;
+	private bool teleported = false;
+
+
 
 	// Use this for initialization
 	void Start () {
@@ -77,6 +85,9 @@ public class PlayerController_02 : MonoBehaviour {
 			transform.Rotate(0,rotationSpeed*Input.GetAxis("Horizontal2")*Time.deltaTime,0);
 		}
 		else if(block_axis) transform.Translate(0,0,moveSpeed*Time.deltaTime);
+
+		/*if(Input.GetKeyDown(KeyCode.Joystick1Button7))
+			pausegame();*/
 
 
 	}
@@ -126,6 +137,16 @@ public class PlayerController_02 : MonoBehaviour {
 		if(other.tag == "Goal"){
 			other.GetComponentInParent<Goal>().playerArrive_02();
 		}
+
+		if(other.tag == "Worm" && !teleported){
+			
+			StartCoroutine(WormIn(PlayerTimeIn,other));
+		}
+		if(other.tag == "Worm" && teleported){
+			
+			StartCoroutine(WormOut(PlayerTimeExit));
+			
+		}
 		
 	}
 	
@@ -134,6 +155,18 @@ public class PlayerController_02 : MonoBehaviour {
 			currentGravity -= incrementGravity;
 	}
 
+	IEnumerator WormIn (float TimeIn, Collider CurrentOther)
+	{
+		
+		teleported = true;
+		yield return new WaitForSeconds(TimeIn);
+		this.transform.position = CurrentOther.GetComponentInParent<Worm>().teletransport(0);
+	}
+	IEnumerator WormOut (float TimeExit)
+	{
+		yield return new WaitForSeconds(TimeExit);
+		teleported = false;
+	}
 
 	void Fire ()
 	{
@@ -178,4 +211,20 @@ public class PlayerController_02 : MonoBehaviour {
 	public int getId(){
 		return playerId;
 	}
+
+	public void pausegame(){
+		if(!pauseg){
+			Time.timeScale = (float)1.0-Time.timeScale;
+			Time.fixedDeltaTime = (float)0.02 * Time.timeScale;
+			texturePlayer1.texture = t;
+			texturePlayer2.texture = t;
+			pauseg = true;
+		}
+		else{
+			pauseg=false;
+			texturePlayer1.texture = null;
+			texturePlayer2.texture = null;
+		}
+	}
+
 }

@@ -18,6 +18,7 @@ public class Goal : MonoBehaviour {
 	private float TimerPlayer01;
 	private float TimerPlayer02;
 
+
 	
 	// Use this for initialization
 	void Start () {
@@ -93,4 +94,5 @@ public class Goal : MonoBehaviour {
 		}
 
 	}
+
 }
