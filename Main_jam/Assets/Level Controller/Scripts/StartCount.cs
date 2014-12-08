@@ -18,6 +18,10 @@ public class StartCount : MonoBehaviour {
 	public float ProportionalY = 0f;
 	public float ProportionalX = 0f;
 
+	[Header("Sound Parameters: ")]
+	public AudioSource AudioSourceCount;
+	public AudioClip AudioCount;
+
 	Rect AuxRect;
 
 	// Use this for initialization
@@ -46,28 +50,32 @@ public class StartCount : MonoBehaviour {
 
 	IEnumerator Count()
 	{
-
+		AudioSourceCount.PlayOneShot(AudioCount);
 		guiTexture.texture = Num_Textures[0];
 		AutoScale();
 		yield return new WaitForSeconds(1f);
 
-
+		AudioSourceCount.PlayOneShot(AudioCount);
 		guiTexture.texture = Num_Textures[1];
 		AutoScale();
 		yield return new WaitForSeconds(1f);
 
+		AudioSourceCount.PlayOneShot(AudioCount);
 		guiTexture.texture = Num_Textures[2];
 		AutoScale();
 		yield return new WaitForSeconds(1f);
 
+		AudioSourceCount.PlayOneShot(AudioCount);
 		guiTexture.texture = Num_Textures[3];
 		AutoScale();
 		yield return new WaitForSeconds(1f);
 
+		AudioSourceCount.PlayOneShot(AudioCount);
 		guiTexture.texture = Num_Textures[4];
 		AutoScale();
 		yield return new WaitForSeconds(1f);
 
+		AudioSourceCount.PlayOneShot(AudioCount);
 		guiTexture.texture = Num_Textures[5];
 		AutoScale();
 		Start_Object_1.animation.clip = Start_Clips[1];

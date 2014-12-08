@@ -7,6 +7,10 @@ public class ButtonController : MonoBehaviour {
 	public int levelToLoad;
 	public float DelayTime = 0f;
 
+	[Header("Sounds: ")]
+	public AudioClip SelectSound;
+	public AudioClip ActivateSound;
+
 	// Use this for initialization
 
 	void Start()
@@ -21,11 +25,13 @@ public class ButtonController : MonoBehaviour {
 
 	public void Selection()
 	{
+		audio.PlayOneShot(SelectSound);
 		guiTexture.texture = ButtonTextures[1];
 	}
 
 	public void Push()
 	{
+		audio.PlayOneShot(ActivateSound);
 		guiTexture.texture = ButtonTextures[2];
 	}
 

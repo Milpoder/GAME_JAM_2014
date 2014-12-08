@@ -18,6 +18,9 @@ public class Goal : MonoBehaviour {
 	private float TimerPlayer01;
 	private float TimerPlayer02;
 
+	[Header("Sounds parameters: ")]
+	public AudioClip EndSound;
+
 
 	
 	// Use this for initialization
@@ -42,6 +45,9 @@ public class Goal : MonoBehaviour {
 	}
 
 	void CheckWinner(){
+
+
+		audio.PlayOneShot(EndSound);
 		if(player1_Arrived  && player2_Arrived){
 			if(TimerPlayer01 < TimerPlayer02){
 				texturePlayer1.texture = textures[0];

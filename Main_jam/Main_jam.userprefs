@@ -1,11 +1,13 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\GUI\VelocityGUI\Scripts\VelocityGUI.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Enviroment\Goal\Scripts\Goal.cs">
     <Files>
-      <File FileName="Assets\Player\Scripts\PlayerController_01.cs" Line="152" Column="3" />
-      <File FileName="Assets\Player\Scripts\PlayerController_02.cs" Line="169" Column="3" />
-      <File FileName="Assets\Enviroment\WormHole\Scripts\Worm.cs" Line="20" Column="58" />
-      <File FileName="Assets\GUI\VelocityGUI\Scripts\VelocityGUI.cs" Line="22" Column="59" />
+      <File FileName="Assets\Enviroment\Acelerator\Scripts\Acelerator.cs" Line="1" Column="1" />
+      <File FileName="Assets\GUI\Scripts\MenuControl.cs" Line="1" Column="1" />
+      <File FileName="Assets\GUI\Scripts\ButtonExit.cs" Line="1" Column="1" />
+      <File FileName="Assets\GUI\Scripts\ButtonController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Level Controller\Scripts\StartCount.cs" Line="1" Column="1" />
+      <File FileName="Assets\Enviroment\Goal\Scripts\Goal.cs" Line="49" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

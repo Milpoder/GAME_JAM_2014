@@ -5,6 +5,10 @@ public class ButtonExit : MonoBehaviour {
 
 	public Texture[] ButtonTextures = new Texture[3];
 	public float DelayTime = 0f;
+
+	[Header("Sounds: ")]
+	public AudioClip SelectSound;
+	public AudioClip ActivateSound;
 	
 	// Use this for initialization
 	
@@ -20,11 +24,13 @@ public class ButtonExit : MonoBehaviour {
 	
 	public void Selection()
 	{
+		audio.PlayOneShot(SelectSound);
 		guiTexture.texture = ButtonTextures[1];
 	}
 	
 	public void Push()
 	{
+		audio.PlayOneShot(ActivateSound);
 		guiTexture.texture = ButtonTextures[2];
 	}
 	
